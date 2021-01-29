@@ -1,10 +1,28 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from edc_base.model_managers import HistoricalRecords
+from edc_base.model_mixins import BaseUuidModel
+from edc_base.sites import SiteModelMixin
+from edc_identifier.model_mixins import NonUniqueSubjectIdentifierFieldMixin
+from edc_search.model_mixins import SearchSlugModelMixin
+
+from potlakosubject.eligibility import Eligibility
 from potlakosubject.models.choices import yes_no, gender, literacy
 
 
 # create your models here
-class Enrollment(models.Model):
+# class Enrollment(models.Model):
+
+class Enrollment(NonUniqueSubjectIdentifierFieldMixin,
+                 SiteModelMixin, SearchSlugModelMixin, BaseUuidModel):
+    eligibility_checklist = Eligibility
+
+    screening_identifier = models.CharField(
+        verbose_name='Screening identifier',
+        max_length=36,
+        unique=True,
+        # default=None
+    )
 
     gender = models.CharField(
         verbose_name='Gender ',
@@ -48,11 +66,7 @@ class Enrollment(models.Model):
         blank=True,
         max_length=5)
 
+    history = HistoricalRecords()
+
     class Meta:
         verbose_name_plural = 'Enrollment'
-
-
-
-
-
-

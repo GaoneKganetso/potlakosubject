@@ -10,11 +10,12 @@ from potlakosubject.models.community_engagement import CommunityEngagementQuesti
 @admin.register(Enrollment)
 class EnrollmentAdmin(admin.ModelAdmin):
     list_display = ('gender', 'citizenship', 'legally_married', 'marriage_certificate', 'literacy', 'minor')
-    list_filter = ('gender', 'literacy')
+    list_filter = ('gender', 'citizenship', 'legally_married', 'marriage_certificate', 'literacy', 'minor')
 
     fieldsets = (
         (None, {
             'fields': (
+                'screening_identifier',
                 'gender',
                 'citizenship',
                 'legally_married',

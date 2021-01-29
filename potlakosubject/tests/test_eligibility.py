@@ -21,7 +21,7 @@ class TestEligibility(TestCase):
         self.assertIn('Should not be a minor', eligiblity.reasons_ineligible)
 
     """ Illiterate participant not eligible """
-    def test_literacy_imeligibility(self):
+    def test_literacy_ineligibility(self):
         eligiblity = Eligibility(literacy=NO)
         self.assertFalse(eligiblity.is_eligible)
         self.assertIn('Must be literate or have a witness available',

@@ -36,8 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'potlakosubject',
-    'crispy_forms'
+    'crispy_forms',
+    'django.contrib.sites',
+    'django_extensions',
 ]
+
+SITE_ID = 1
+
+#AUTH_USER_MODEL = 'potlakosubject.'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -47,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
+
 ]
 
 ROOT_URLCONF = 'training.urls'
@@ -75,7 +83,7 @@ WSGI_APPLICATION = 'training.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'sqlite3'),
     }
 }
 
