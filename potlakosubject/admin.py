@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+"""
 from django.contrib import admin
 from potlakosubject.models.enrollment import Enrollment
 from potlakosubject.models.subject_consent import SubjectConsent
@@ -99,3 +99,5 @@ class EducationAdmin(admin.ModelAdmin):
         'salary': admin.VERTICAL,
 
     }
+
+"""

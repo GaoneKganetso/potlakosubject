@@ -11,9 +11,28 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import sys
+import configparser
+from django.core.management.color import color_style
+
+# from .logging import LOGGING
+style = color_style()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+APP_NAME = 'potlako_subject'
+
+SITE_ID = 3
+
+ETC_DIR = os.path.join(BASE_DIR, 'etc')
+
+CONFIG_FILE = 'potlako.ini'
+
+CONFIG_PATH = os.path.join('/etc', 'potlako', CONFIG_FILE)
+sys.stdout.write(style.SUCCESS('f * Reading config from {CONFIG_FILE}\n'))
+config = configparser.ConfigParser()
+config.read(CONFIG_PATH)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -39,11 +58,34 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django.contrib.sites',
     'django_extensions',
+    'rest_framework.authtoken',
+    'edc_action_item.apps.AppConfig',
+    'edc_sync.apps.AppConfig',
+    'edc_sync_files.apps.AppConfig',
+    'edc_base.apps.AppConfig',
+    'edc_consent.apps.AppConfig',
+    'edc_identifier.apps.AppConfig',
+    'edc_locator.apps.AppConfig',
+    'edc_reference.apps.AppConfig',
+    'edc_metadata_rules.apps.AppConfig',
+    'edc_registration.apps.AppConfig',
+    'edc_timepoint.apps.AppConfig',
+    'edc_visit_schedule.apps.AppConfig',
+    'potlako_metadata_rules.apps.AppConfig',
+    'potlako_visit_schedule.apps.AppConfig',
+    'potlako_reference.apps.AppConfig',
+    'potlako_prn.apps.AppConfig',
+    'potlako_subject.apps.EdcAppointmentAppConfig',
+    'potlako_subject.apps.EdcFacilityAppConfig',
+    'potlako_subject.apps.EdcMetadataAppConfig',
+    'potlako_subject.apps.EdcProtocolAppConfig',
+    'potlako_subject.apps.EdcDeviceAppConfig',
+    'potlako_subject.apps.EdcVisitTrackingAppConfig',
+    'potlako_subject.apps.AppConfig',
+
 ]
 
-SITE_ID = 1
-
-#AUTH_USER_MODEL = 'potlakosubject.'
+# AUTH_USER_MODEL = 'potlakosubject.'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +96,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
+    'edc_dashboard.middleware.DashboardMiddleware',
+    'edc_subject_dashboard.middleware.DashboardMiddleware',
 
 ]
 
@@ -62,7 +106,8 @@ ROOT_URLCONF = 'training.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,6 +130,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'sqlite3'),
     }
+}
+
+REST_FRAMEWORK = {
+    'PAGE_SIZE': 1,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
 }
 
 # Password validation
@@ -123,4 +175,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Dashboards
+DASHBOARD_URL_NAMES = {
+    'subject_listboard_url': 'potlako_dashboard:subject_listboard_url',
+    'screening_listboard_url': 'potlako_dashboard:screening_listboard_url',
+    'subject_dashboard_url': 'potlako_dashboard:subject_dashboard_url',
+}
+
 
