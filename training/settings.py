@@ -23,16 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 APP_NAME = 'potlako_subject'
 
-SITE_ID = 3
+SITE_ID = 1
 
 ETC_DIR = os.path.join(BASE_DIR, 'etc')
 
 CONFIG_FILE = 'potlako.ini'
 
-CONFIG_PATH = os.path.join('/etc', 'potlako', CONFIG_FILE)
-sys.stdout.write(style.SUCCESS('f * Reading config from {CONFIG_FILE}\n'))
-config = configparser.ConfigParser()
-config.read(CONFIG_PATH)
+# CONFIG_PATH = os.path.join('/etc', 'potlako', CONFIG_FILE)
+# sys.stdout.write(style.SUCCESS('f * Reading config from {CONFIG_FILE}\n'))
+# config = configparser.ConfigParser()
+# config.read(CONFIG_PATH)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -54,15 +54,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'potlakosubject',
-    'crispy_forms',
     'django.contrib.sites',
+    # 'django_crypto_fields.apps.AppConfig',
     'django_extensions',
     'rest_framework.authtoken',
+    'potlakosubject',
+    'crispy_forms',
     'edc_action_item.apps.AppConfig',
-    'edc_sync.apps.AppConfig',
-    'edc_sync_files.apps.AppConfig',
-    'edc_base.apps.AppConfig',
+    # 'edc_sync.apps.AppConfig',
+    # 'edc_sync_files.apps.AppConfig',
+    # 'edc_base.apps.AppConfig',
     'edc_consent.apps.AppConfig',
     'edc_identifier.apps.AppConfig',
     'edc_locator.apps.AppConfig',
@@ -70,22 +71,31 @@ INSTALLED_APPS = [
     'edc_metadata_rules.apps.AppConfig',
     'edc_registration.apps.AppConfig',
     'edc_timepoint.apps.AppConfig',
-    'edc_visit_schedule.apps.AppConfig',
-    'potlako_metadata_rules.apps.AppConfig',
-    'potlako_visit_schedule.apps.AppConfig',
-    'potlako_reference.apps.AppConfig',
-    'potlako_prn.apps.AppConfig',
-    'potlako_subject.apps.EdcAppointmentAppConfig',
-    'potlako_subject.apps.EdcFacilityAppConfig',
-    'potlako_subject.apps.EdcMetadataAppConfig',
-    'potlako_subject.apps.EdcProtocolAppConfig',
-    'potlako_subject.apps.EdcDeviceAppConfig',
-    'potlako_subject.apps.EdcVisitTrackingAppConfig',
-    'potlako_subject.apps.AppConfig',
-
+    # 'edc_visit_schedule.apps.AppConfig',
+    'django_crypto_fields.apps.AppConfig',
+    # 'potlako_metadata_rules.apps.AppConfig',
+    # 'potlako_visit_schedule.apps.AppConfig',
+    # 'potlako_reference.apps.AppConfig',
+    # 'potlako_prn.apps.AppConfig',
+    # 'potlako_subject.apps.EdcAppointmentAppConfig',
+    # 'potlako_subject.apps.EdcFacilityAppConfig',
+    # 'potlako_subject.apps.EdcMetadataAppConfig',
+    # 'potlako_subject.apps.EdcProtocolAppConfig',
+    # 'potlako_subject.apps.EdcDeviceAppConfig',
+    # 'potlako_subject.apps.EdcVisitTrackingAppConfig',
+    # 'potlako_subject.apps.AppConfig',
+    # 'django_crypto_fields.apps.AppConfig',
+    'edc_protocol',
 ]
 
-# AUTH_USER_MODEL = 'potlakosubject.'
+# folder where the encryption keys are stored
+# Do not set for tests
+# KEY_PATH = '/etc/potlako/django_crypto_fields'
+
+# optional filename prefix for encryption keys files:
+# KEY_PREFIX = 'bhp066'
+
+# AUTH_USER_MODEL = 'potlakosubject.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -182,5 +192,4 @@ DASHBOARD_URL_NAMES = {
     'screening_listboard_url': 'potlako_dashboard:screening_listboard_url',
     'subject_dashboard_url': 'potlako_dashboard:subject_dashboard_url',
 }
-
-
+# AUTO_CREATE_KEYS = True
