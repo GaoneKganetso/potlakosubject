@@ -1,41 +1,41 @@
 arrow==0.17.0
-backports.csv==1.0.7
-backports.functools-lru-cache==1.6.1
-bcrypt==3.1.7
-certifi==2020.12.5
-cffi==1.14.4
+asgiref==3.3.1
+blessed==1.17.12
+certifi==2020.6.20
 chardet==4.0.0
-cryptography==3.3.1
-defusedxml==0.6.0
-diff-match-patch==20200713
-Django==1.11.29
-django-cors-headers==3.0.2
+Django==3.1.4
+django-cors-headers==3.7.0
+django-crispy-forms==1.10.0
 django-crypto-fields @ git+https://github.com/botswana-harvard/django-crypto-fields.git@a312fb89aa9e1af1dd667b508a966978c6753558
-django-debug-toolbar==1.11
-django-extensions==3.0.0
-django-import-export==1.2.0
+django-debug-toolbar==3.2
+django-extensions==3.1.0
 django-ipware==3.0.2
 django-js-reverse==0.9.1
 django-logentry-admin==1.0.6
+django-picklefield==3.0.1
+django-q==1.3.4
 django-revision @ git+https://github.com/botswana-harvard/django-revision.git@2116d15e91a91d5432e5b3fd85775d768233950f
 django-simple-history==2.12.0
-djangorestframework==3.9.4
+djangorestframework==3.12.2
 docutils==0.16
 edc-action-item @ git+https://github.com/botswana-harvard/edc-action-item.git@bbbbe0751fbc8988d5805365da2af88ac361a232
 edc-appointment @ git+https://github.com/botswana-harvard/edc-appointment.git@7409b0e7df24e1231bec45ba0276508c3254b378
 edc-base @ git+https://github.com/botswana-harvard/edc-base.git@e4bb4cd3d07dd5b69ab86719a6397e81de75718e
 edc-consent @ git+https://github.com/botswana-harvard/edc-consent.git@4e35b1ca855fea3a549d882fdaeb84b6a5f9a3a7
 edc-constants @ git+https://github.com/botswana-harvard/edc-constants.git@e092600c585a9ef42c8cf35b97b87a650d16a860
+edc-dashboard @ git+https://github.com/botswana-harvard/edc-dashboard.git@2b7a9ede1b4f5865c5c34a24f7b2d48ba1cf6ecc
 edc-device @ git+https://github.com/botswana-harvard/edc-device.git@867751966a4449ffd17719aad11bba6be2a52800
 edc-facility @ git+https://github.com/botswana-harvard/edc-facility.git@3cd82c74b28ec22d16c4d627eff1aaf311af4287
 edc-fieldsets @ git+https://github.com/botswana-harvard/edc-fieldsets.git@a11157ca78f69fe5c074f18f3073a849e0d2c82d
 edc-form-validators @ git+https://github.com/botswana-harvard/edc-form-validators.git@17e6eaf4cbef1b80ec76721f905a9d76a66d9fe9
 edc-identifier @ git+https://github.com/botswana-harvard/edc-identifier.git@c849cdb598d87082ab2008d7855bd1710e7023de
 edc-lab @ git+https://github.com/botswana-harvard/edc-lab.git@aa644f38b042403346091242e57c079d63e5b2c7
+edc-label @ git+https://github.com/botswana-harvard/edc-label.git@2db9021d7f8df92b7d8d9286e123f431f76f583c
 edc-list-data @ git+https://github.com/botswana-harvard/edc-list-data.git@3e91635b3d6cc3e9e9b7b8bb1731c7b19db43d0f
 edc-locator @ git+https://github.com/botswana-harvard/edc-locator.git@607caa33dbd1ae445a45bc387a0ce1421bddd414
 edc-metadata @ git+https://github.com/botswana-harvard/edc-metadata.git@7a2de94cf68aba21bfa11f620875bae9230a7269
 edc-metadata-rules @ git+https://github.com/botswana-harvard/edc-metadata-rules.git@85a78fdc3349146f785d5608eef4f3c05a6dc162
+edc-model==0.3.1
 edc-model-admin @ git+https://github.com/botswana-harvard/edc-model-admin.git@e54d222811375849443b31107ad102d8aab707c9
 edc-model-wrapper @ git+https://github.com/botswana-harvard/edc-model-wrapper.git@814b9f85feceed246e378425ab6add8bba3b655f
 edc-prn @ git+https://github.com/botswana-harvard/edc-prn.git@ff7d32cdfafc4ee225602931860c38c268148ae3
@@ -44,52 +44,43 @@ edc-reference @ git+https://github.com/botswana-harvard/edc-reference.git@cf77d5
 edc-registration @ git+https://github.com/botswana-harvard/edc-registration.git@242deccd2d6f777646206e187e72aa6d2129ab94
 edc-search @ git+https://github.com/botswana-harvard/edc-search.git@9d60b5b606b903245fad0004e432279df52da776
 edc-sms @ git+https://github.com/botswana-harvard/edc-sms.git@d52d65940001caa4587d802336bf7dee8132405a
-edc-subject-dashboard @ git+https://github.com/botswana-harvard/edc-subject-dashboard.git@9ff2ef810efb9f1d669d0d4d244810676651235e
-edc-sync @ git+https://github.com/botswana-harvard/edc-sync.git@c6068bcd36dedf41df7d059f8335190ed4d56d0b
-edc-sync-files @ git+https://github.com/botswana-harvard/edc-sync-files.git@840d873ebd7fd8464074e4a406c3fcb1409a1602
+edc-subject-dashboard @ git+https://github.com/botswana-harvard/edc-subject-dashboard.git@3ba561a130933dec1a47f6fa95bacdb9202b5f45
+edc-sync==0.1.0a1
 edc-timepoint @ git+https://github.com/botswana-harvard/edc-timepoint.git@2231996b42606a422ef4763c3ab388cddf38abbe
-edc-visit-schedule @ git+https://github.com/botswana-harvard/edc-visit-schedule.git@a511b77982abf2f39511ba4d9679312d5f36a97a
+edc-utils==0.3.0
+edc-visit-schedule @ git+https://github.com/clinicedc/edc-visit-schedule@968958e790ca1cc896dbbc0aa5c8b6b81d70afe3
 edc-visit-tracking @ git+https://github.com/botswana-harvard/edc-visit-tracking.git@61f7ccd1ce3f4b078a389b844029ef1263469ec2
-enum34==1.1.10
-et-xmlfile==1.0.1
-Faker==3.0.1
-gitdb2==2.0.6
-GitPython==2.1.15
-hurry.filesize==0.9
+Faker==5.0.2
+flourish-child @ git+https://github.com/flourishbhp/flourish-child.git@5f9dc1767d0fb51a0cd57df5c4385925b31ac700
+flourish-form-validations @ git+https://github.com/flourishbhp/flourish-form-validations.git@326e787b9ba7568ec7b186635b1b11880fa9c68a
+flourish-prn @ git+https://github.com/flourishbhp/flourish-prn.git@e072a4e0f7287f6fd1a5c42004b1cbd4b2b7328b
+flourish-visit-schedule @ git+https://github.com/flourishbhp/flourish-visit-schedule.git@eee3535a0c3b725db9a895bcd9351ddc57a23ed5
+gitdb==4.0.5
+GitPython==3.1.11
 idna==2.10
-ipaddress==1.0.23
-jdcal==1.4.1
-MarkupPy==1.14
+meson==0.55.3
 model-mommy==2.0.0
-odfpy==1.4.1
-openpyxl==2.6.4
-paramiko==2.7.2
-pathtools==0.1.2
-potlako-dashboard @ git+https://github.com/potlako-plus/potlako-dashboard.git@2b4fbd35679d776237e10318fd007ccbc3b71857
-potlako-metadata-rules @ git+https://github.com/potlako-plus/potlako-metadata-rules.git@2073e365efab3be03e5cb17ec32e2d6cf4422e8e
+potlako-dashboard @ git+https://github.com/potlako-plus/potlako-dashboard.git@cf2f2d26fec1ac1a52e3337b6f638ebb34ed3744
 potlako-prn @ git+https://github.com/potlako-plus/potlako-prn.git@065029eea62643e5f837a51b10991a9f89764760
-potlako-reference @ git+https://github.com/potlako-plus/potlako-reference.git@c01122375616c896112ab9ecac4e2d95650280d2
-potlako-validations @ git+https://github.com/potlako-plus/potlako-validations.git@3c3568cb78f4dff9c5769d666dd27b83f42f6309
-potlako-visit-schedule @ git+https://github.com/potlako-plus/potlako-visit-schedule.git@a27ce4b6b037e2a5eb3306f8dd61bb5eb181671a
-pycparser==2.20
+protobuf==3.13.0
+psycopg2 @ file:///opt/concourse/worker/volumes/live/c8a4b965-959f-4e6c-7792-4aa881d63c8d/volume/psycopg2_1594305121341/work
+pyasn1==0.4.8
 pycrypto==2.6.1
+pycryptodome==3.9.9
+pycups==2.0.1
 PyMySQL==0.10.1
-PyNaCl==1.4.0
 python-dateutil==2.8.1
+python-keyczar==0.716
 python-memcached==1.59
-pytz==2021.1
-PyYAML==5.4.1
+pytz==2020.4
 requests==2.25.1
 six==1.15.0
-smmap==3.0.5
-smmap2==3.0.1
-sqlparse==0.3.1
-tablib==0.14.0
+smmap==3.0.4
+sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
 text-unidecode==1.3
-toolz==0.10.0
-tqdm==4.56.0
-typing==3.7.4.3
+toolz==0.11.1
+tqdm==4.54.1
+Unipath==1.1
 urllib3==1.26.3
-watchdog==0.10.6
-xlrd==2.0.1
+wcwidth==0.2.5
 xlwt==1.3.0

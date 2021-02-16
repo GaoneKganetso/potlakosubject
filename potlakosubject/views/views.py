@@ -26,11 +26,6 @@ def enroll(request):
         # is the form valid
         if form.is_valid():
 
-            """try:
-                return redirect('/')
-            except:
-                pass """
-
             # save  the new category to the database
             form.save(commit=True)
 

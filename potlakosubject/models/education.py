@@ -34,4 +34,5 @@ class Education(models.Model):
     )
 
     class Meta:
+        app_label = 'potlakosubject'
         verbose_name_plural = 'Education'

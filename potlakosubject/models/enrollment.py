@@ -68,4 +68,6 @@ class Enrollment(NonUniqueSubjectIdentifierFieldMixin,
     history = HistoricalRecords()
 
     class Meta:
-        verbose_name_plural = 'Enrollment'
+        app_label = 'potlakosubject'
+        verbose_name = 'Potlako + Eligibility'
+        verbose_name_plural = 'Potlako + Eligibility'

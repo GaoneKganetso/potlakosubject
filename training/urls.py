@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # path('admin/', admin.site.urls),
     path('', include('potlakosubject.urls')),
+    url(r'^edc-sync/', include('edc_sync.urls')),
 
 ]

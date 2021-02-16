@@ -2,7 +2,7 @@ from django.db import models
 from potlakosubject.models.choices import active, problem, neighbor, vote
 
 
-class CommunityEngagementQuestionnare(models.Model):
+class CommunityEngagement(models.Model):
     activeness = models.CharField(
         verbose_name='How active are you in community activities such as burial society, Motshelo, Syndicate, PTA, '
                      'VDC(Village Development Committee), Mophato and development of the community that surrounds '
@@ -21,13 +21,13 @@ class CommunityEngagementQuestionnare(models.Model):
         blank=True,
     )
 
-    problems =  models.CharField(
+    problems = models.CharField(
         verbose_name='What are the major problems in this neighborhood?',
         max_length=25,
         choices=problem,
         null=True,
         blank=True,
-        #other specify
+        # other specify
     )
 
     neighborhood = models.CharField(
@@ -39,3 +39,5 @@ class CommunityEngagementQuestionnare(models.Model):
 
     )
 
+    class Meta:
+        app_label = 'potlakosubject'

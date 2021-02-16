@@ -12,8 +12,8 @@ from edc_model_admin.model_admin_audit_fields_mixin import (
 from .. import admin
 # from ..admin_site import potlako_subject_admin
 from potlakosubject.tests.admin_site import potlako_subject_admin
-from potlakosubject.forms.enrollmentform import EnrollmentForm
-from ..models import Enrollment
+from potlakosubject.forms.education_form import EducationForm
+from ..models import Education
 
 
 class ModelAdminMixin(ModelAdminNextUrlRedirectMixin,
@@ -29,33 +29,29 @@ class ModelAdminMixin(ModelAdminNextUrlRedirectMixin,
     next_form_getter_cls = NextFormGetter
 
 
-@admin.register(Enrollment, site=potlako_subject_admin)
+@admin.register(Education, site=potlako_subject_admin)
 class EnrollmentAdmin(ModelAdminMixin, admin.ModelAdmin):
-    form = EnrollmentForm
+    form = EducationForm
 
     fieldsets = (
         (None, {
             'fields': (
                 'screening_identifier',
-                'gender',
-                'citizenship',
-                'legally_married',
-                'marriage_certificate',
-                'minor',
-                'literacy'
+                'work',
+                'type_of_work',
+                'recent_job',
+                'salary'
             )}),
         audit_fieldset_tuple)
 
-    search_fields = ('subject_identifier',)
+    search_fields = ('subject_identifier', 'salary',)
 
     radio_fields = {
-        'gender': admin.VERTICAL,
-        'citizenship': admin.VERTICAL,
-        'legally_married': admin.VERTICAL,
-        'marriage_certificate': admin.VERTICAL,
-        'minor': admin.VERTICAL,
-        'literacy': admin.VERTICAL, }
+        'work': admin.VERTICAL,
+        'type_of_work': admin.VERTICAL,
+        'recent_job': admin.VERTICAL,
+        'salary': admin.VERTICAL, }
 
-    def get_readonly_fields(self, request, obj=None):
-        return (super().get_readonly_fields(request, obj=obj) + audit_fields +
-                ('citizenship',))
+    # def get_readonly_fields(self, request, obj=None):
+    #  return (super().get_readonly_fields(request, obj=obj) + audit_fields +
+    # ('citizenship',))

@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.apps import AppConfig
 
 
 class PotlakosubjectConfig(AppConfig):
-    name = 'potlakosubject'
+    # label = 'potlako_subject'
+    verbose_name = 'Potlako Subject'
+    name = 'potlako_subject'
+    admin_site_name = 'potlako_subject_admin'

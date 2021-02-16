@@ -6,6 +6,7 @@ from ..models import Enrollment
 
 
 class EnrollmentForm(SiteModelFormMixin, FormValidatorMixin, forms.ModelForm):
+    form_validator_cls = ScreeningFormValidator
 
     screening_identifier = forms.CharField(
         label='Screening identifier',
